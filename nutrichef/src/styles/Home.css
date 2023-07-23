@@ -1,0 +1,18 @@
+.navigation-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .navigation-buttons a button {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .navigation-buttons button {
+    background-color: #008CBA;
+  }
