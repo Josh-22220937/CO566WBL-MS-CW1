@@ -1,10 +1,14 @@
+// Import react library 
 import React from 'react';
+
+// RecipeTable component that displays a table of recipes
 const RecipeTable = ({ recipes, ingredients, removeRecipe, numberOfRecipes }) => {
 
+    // Function to find an ingredient object in the list
     const findIngredientByName = (name) => {
       return ingredients.find((ingredient) => ingredient.name === name);
     };
-  
+    // Function to calculate total nutrition value of a recipe for a specific nutrition type 
     const calculateTotalNutritionValue = (recipeIngredients, nutritionType) => {
       let totalNutritionValue = 0;
   
@@ -23,7 +27,8 @@ const RecipeTable = ({ recipes, ingredients, removeRecipe, numberOfRecipes }) =>
     const recipesToDisplay = numberOfRecipes 
       ? recipes.slice(Math.max(0, recipes.length - numberOfRecipes)) 
       : recipes;
-  
+
+    // main return of the component, defining structure of the component 
     return (
       <table>
         <thead>
