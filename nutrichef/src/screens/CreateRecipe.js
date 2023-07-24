@@ -1,10 +1,14 @@
+// Import React library and necessary hooks
 import React, { useState } from 'react';
 
+// Define the createRecipe screen
 const CreateRecipe = ({ ingredients, recipes, addRecipe }) => {
+  // State hooks for managing selected ingredients, their quantities, and the recipe name
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [ingredientQuantities, setIngredientQuantities] = useState({});
   const [recipeName, setRecipeName] = useState('');
 
+  // Handler for changing ingredient quantities
   const handleIngredientChange = (event) => {
     const { name, value } = event.target;
     setIngredientQuantities((prevQuantities) => ({
@@ -13,6 +17,7 @@ const CreateRecipe = ({ ingredients, recipes, addRecipe }) => {
     }));
   };
 
+  // Handler for selecting/deselecting ingredients
   const handleIngredientSelect = (event) => {
     const { name, checked } = event.target;
     setSelectedIngredients((prevIngredients) =>
@@ -20,9 +25,11 @@ const CreateRecipe = ({ ingredients, recipes, addRecipe }) => {
     );
   };
 
+  // Handler for creating the new recipe
   const handleRecipeCreate = (event) => {
     event.preventDefault();
 
+    // Validation checks
     if (recipeName.trim() === '') {
       alert('Please enter a recipe name.');
       return;
@@ -51,6 +58,7 @@ const CreateRecipe = ({ ingredients, recipes, addRecipe }) => {
     setIngredientQuantities({});
   };
 
+  // Return form for creating a new recipe
   return (
     <div className="screen">
     <h1>NutriChef</h1>
