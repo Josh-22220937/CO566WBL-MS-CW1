@@ -1,3 +1,4 @@
+// Define a list of ingredients with their corresponding nutritional values
 const ingredients = [
     {
       name: 'Tomato',
