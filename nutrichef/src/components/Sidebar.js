@@ -1,10 +1,13 @@
+// Importing necessary libraries and styles
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineHome, AiOutlinePlus, AiOutlineShopping, AiOutlineUnorderedList } from 'react-icons/ai';
 import '../styles/Sidebar.css';
 
+// The Sidebar component
 const Sidebar = ({ isOpen, onClose }) => {
   return (
+    // The 'sidebar' div class changes depending on whether 'isOpen' is true or false
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <button className="close-button" onClick={onClose}>
         &times;
