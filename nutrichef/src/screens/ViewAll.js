@@ -4,6 +4,7 @@ import RecipeTable from '../components/RecipeTable';
 
 // Define the ViewAll screen
 const ViewAll = ({ recipes, ingredients, removeRecipe }) => {
+    // Main return, which defines the structure of the app
     return (
       <div className="screen">
         <h1>NutriChef</h1>
