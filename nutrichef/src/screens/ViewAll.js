@@ -1,6 +1,8 @@
+// Import React library and necessary component
 import React from 'react';
 import RecipeTable from '../components/RecipeTable';
 
+// Define the ViewAll screen
 const ViewAll = ({ recipes, ingredients, removeRecipe }) => {
     return (
       <div className="screen">
