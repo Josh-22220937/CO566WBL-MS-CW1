@@ -9,6 +9,7 @@ const ViewAll = ({ recipes, ingredients, removeRecipe }) => {
       <div className="screen">
         <h1>NutriChef</h1>
         <h2>View All Recipes</h2>
+         // Making use of the recipetable component
         <RecipeTable recipes={recipes} ingredients={ingredients} removeRecipe={removeRecipe}/>
       </div>
     );
