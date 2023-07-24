@@ -1,23 +1,33 @@
+// Import necessary modules from React and react-router-dom
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+// Import the components and screens
 import Sidebar from './components/Sidebar';
 import Home from './screens/Home';
 import CreateRecipe from './screens/CreateRecipe';
 import CreateShoppingList from './screens/CreateShoppingList';
 import ViewAll from './screens/ViewAll';
+
+// Import data
 import Ingredients from './data/Ingredients';
 import { getStoredRecipes, addRecipe, removeRecipe } from './data/Recipes';
+
+// Importing styles
 import './styles/App.css';
 
 function App() {
+  // State hooks for managing sidebar visibility and recipes list
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [recipes, setRecipes] = useState([]);
 
+  // Load stored recipes on component mount using useEffect
   useEffect(() => {
     const storedRecipes = getStoredRecipes();
     setRecipes(storedRecipes);
   }, []);
 
+  // Handlers for opening and closing the sidebar
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -26,11 +36,13 @@ function App() {
     setIsSidebarOpen(false);
   };
 
+  // Handler for removing a recipe from the list
   const removeRecipeFromList = (recipeName) => {
-    removeRecipe(recipeName); // this will remove the recipe from localStorage
-    setRecipes(prevRecipes => prevRecipes.filter(recipe => recipe.name !== recipeName)); // this will remove the recipe from state
+    removeRecipe(recipeName); 
+    setRecipes(prevRecipes => prevRecipes.filter(recipe => recipe.name !== recipeName));
   };
 
+  // Main return, which defines the structure of the app and routing
   return (
     <Router>
       <div className="App">
